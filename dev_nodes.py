@@ -1112,6 +1112,92 @@ class DevToolsDisabledWidgets:
     def noop(self, **kwargs):
         return tuple()
 
+class DevToolsDynamicComboNode:
+    """
+    Test node with DynamicCombo that shows/hides widgets based on selection.
+    Used for E2E testing of dynamic widget visibility in subgraphs.
+    """
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "first_widget": (
+                    "INT",
+                    {},
+                ),
+                "dynamic_combo": (
+                    "COMFY_DYNAMICCOMBO_V3",
+                    {
+                        "options": [
+                            {
+                                "key": "none",
+                                "inputs": {"required": {}},
+                            },
+                            {
+                                "key": "one",
+                                "inputs": {
+                                    "required": {
+                                        "w1": (
+                                            "INT",
+                                            {},
+                                        ),
+                                    }
+                                },
+                            },
+                            {
+                                "key": "two",
+                                "inputs": {
+                                    "required": {
+                                        "w1": (
+                                            "INT",
+                                            {},
+                                        ),
+                                        "w2": (
+                                            "INT",
+                                            {},
+                                        ),
+                                    }
+                                },
+                            },
+                            {
+                                "key": "three",
+                                "inputs": {
+                                    "required": {
+                                        "w1": (
+                                            "INT",
+                                            {},
+                                        ),
+                                        "w2": (
+                                            "INT",
+                                            {},
+                                        ),
+                                        "w3": (
+                                            "INT",
+                                            {},
+                                        ),
+                                    }
+                                },
+                            },
+                        ],
+                    },
+                ),
+                "last_widget": (
+                    "INT",
+                    {},
+                ),
+            }
+        }
+
+    RETURN_TYPES = ("INT",)
+    FUNCTION = "execute"
+    CATEGORY = "DevTools/Testing"
+    DESCRIPTION = "Test node for dynamic combo widget behavior in subgraphs"
+
+    def execute(self, **kwargs):
+        print(kwargs)
+        return (1,)
+
 NODE_CLASS_MAPPINGS = {
     "DevToolsErrorRaiseNode": ErrorRaiseNode,
     "DevToolsErrorRaiseNodeWithMessage": ErrorRaiseNodeWithMessage,
@@ -1161,6 +1247,7 @@ NODE_CLASS_MAPPINGS = {
     "DevToolsTreeSelectWidget": DevToolsTreeSelectWidget,
     "DevToolsTreeSelectMultiWidget": DevToolsTreeSelectMultiWidget,
     "DevToolsDisabledWidgets": DevToolsDisabledWidgets,
+    "DevToolsDynamicComboNode": DevToolsDynamicComboNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -1212,4 +1299,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DevToolsTreeSelectWidget": "Tree Select",
     "DevToolsTreeSelectMultiWidget": "Tree Select (Multi)",
     "DevToolsDisabledWidgets": "Disabled Widgets",
+    "DevToolsDynamicComboNode": "Dynamic Combo Node",
 }
