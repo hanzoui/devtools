@@ -1115,7 +1115,6 @@ class DevToolsDisabledWidgets:
 class DevToolsDynamicComboNode:
     """
     Test node with DynamicCombo that shows/hides widgets based on selection.
-    Used for E2E testing of dynamic widget visibility in subgraphs.
     """
 
     @classmethod
@@ -1192,7 +1191,7 @@ class DevToolsDynamicComboNode:
     RETURN_TYPES = ("INT",)
     FUNCTION = "execute"
     CATEGORY = "DevTools/Testing"
-    DESCRIPTION = "Test node for dynamic combo widget behavior in subgraphs"
+    DESCRIPTION = "Test node for dynamic combo widget behavior"
 
     def execute(self, **kwargs):
         print(kwargs)
