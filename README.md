@@ -1,4 +1,4 @@
-# Hanzo Studio_devtools
+# HanzoStudio_devtools
 Hanzo Studio developer tools (Custom Node)
 
 ## Profiling (WIP)
