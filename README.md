@@ -1,5 +1,5 @@
-# ComfyUI_devtools
-ComfyUI developer tools (Custom Node)
+# Hanzo Studio_devtools
+Hanzo Studio developer tools (Custom Node)
 
 ## Profiling (WIP)
 Torch profiler tracing for node execution / module startup
@@ -8,4 +8,4 @@ Torch profiler tracing for node execution / module startup
 Hot custom node module reload for node development
 
 ## Automated Testing Tools
-This repo is used for [ComfyUI Frontend](https://github.com/Comfy-Org/ComfyUI_frontend) testing
+This repo is used for [Hanzo Frontend](https://github.com/hanzoui/studio_frontend) testing
